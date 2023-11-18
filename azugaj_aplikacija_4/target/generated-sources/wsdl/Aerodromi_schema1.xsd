@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ws.aplikacija_4.azugaj.nwtis.foi.org/" xmlns:tns="http://ws.aplikacija_4.azugaj.nwtis.foi.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="aktivirajAerodromZaLetov" type="tns:aktivirajAerodromZaLetov"/>
+
+  <xs:element name="aktivirajAerodromZaLetovResponse" type="tns:aktivirajAerodromZaLetovResponse"/>
+
+  <xs:element name="dajAerodromeZaLetove" type="tns:dajAerodromeZaLetove"/>
+
+  <xs:element name="dajAerodromeZaLetoveResponse" type="tns:dajAerodromeZaLetoveResponse"/>
+
+  <xs:element name="dodajAerodromZaLetove" type="tns:dodajAerodromZaLetove"/>
+
+  <xs:element name="dodajAerodromZaLetoveResponse" type="tns:dodajAerodromZaLetoveResponse"/>
+
+  <xs:element name="dohvatiStatus" type="tns:dohvatiStatus"/>
+
+  <xs:element name="dohvatiStatusResponse" type="tns:dohvatiStatusResponse"/>
+
+  <xs:element name="pauzirajAerodromZaLetov" type="tns:pauzirajAerodromZaLetov"/>
+
+  <xs:element name="pauzirajAerodromZaLetovResponse" type="tns:pauzirajAerodromZaLetovResponse"/>
+
+  <xs:complexType name="aktivirajAerodromZaLetov">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="aktivirajAerodromZaLetovResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pauzirajAerodromZaLetov">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pauzirajAerodromZaLetovResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dohvatiStatus">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:aerodrom" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="aerodrom">
+    <xs:sequence>
+      <xs:element name="drzava" type="xs:string" minOccurs="0"/>
+      <xs:element name="icao" type="xs:string" minOccurs="0"/>
+      <xs:element name="lokacija" type="tns:lokacija" minOccurs="0"/>
+      <xs:element name="naziv" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lokacija">
+    <xs:sequence>
+      <xs:element name="latitude" type="xs:string" minOccurs="0"/>
+      <xs:element name="longitude" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dohvatiStatusResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:aerodromStatus" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="aerodromStatus">
+    <xs:sequence>
+      <xs:element name="aerodrom" type="tns:aerodrom" minOccurs="0"/>
+      <xs:element name="status" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dodajAerodromZaLetove">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dodajAerodromZaLetoveResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dajAerodromeZaLetove">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dajAerodromeZaLetoveResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:aerodrom" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

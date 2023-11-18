@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ws.aplikacija_4.azugaj.nwtis.foi.org/" xmlns:tns="http://ws.aplikacija_4.azugaj.nwtis.foi.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="dajKorisnik" type="tns:dajKorisnik"/>
+
+  <xs:element name="dajKorisnikResponse" type="tns:dajKorisnikResponse"/>
+
+  <xs:element name="dajKorisnike" type="tns:dajKorisnike"/>
+
+  <xs:element name="dajKorisnikeResponse" type="tns:dajKorisnikeResponse"/>
+
+  <xs:element name="dodajKorisnika" type="tns:dodajKorisnika"/>
+
+  <xs:element name="dodajKorisnikaResponse" type="tns:dodajKorisnikaResponse"/>
+
+  <xs:complexType name="dajKorisnike">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg3" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dajKorisnikeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:korisnik" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="korisnik">
+    <xs:sequence>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="ime" type="xs:string" minOccurs="0"/>
+      <xs:element name="korIme" type="xs:string" minOccurs="0"/>
+      <xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+      <xs:element name="prezime" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dodajKorisnika">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:korisnik" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dodajKorisnikaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dajKorisnik">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dajKorisnikResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:korisnik" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
