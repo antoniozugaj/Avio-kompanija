@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 17
+Class-Path: libs/azugaj_lib_1-1.0.4.jar
+Main-Class: org.foi.nwtis.azugaj.aplikacija_1.PokretacPosluzitelja
+Created-By: Maven Integration for Eclipse
+

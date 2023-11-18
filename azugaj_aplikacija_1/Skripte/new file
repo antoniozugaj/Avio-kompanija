@@ -1,0 +1,1 @@
+java -cp target/azugaj_aplikacija_1-1.0.0.jar org.foi.nwtis.azugaj.aplikacija_1.PokretacPosluzitelja NWTiS_azugaj_1.txt
